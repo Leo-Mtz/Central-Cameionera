@@ -1,18 +1,31 @@
 Pasajero *registroPasajero(){
-	
-	Pasajero *nuevo = new Pasajero;
+
+Pasajero *nuevo = new Pasajero;
 	
 	nuevo->idPasajero = validaEntero("Ingresa tu Id: ");
 	
-	nuevo->idRuta = validaEntero("Que ruta de autobus tomaras?: ");
 	
-	nuevo->origen = validaEntero("Desde donde tomas el autobus?: ");
-	nuevo->destino = validaEntero("Donde bajas del autobus?: ");
+	nuevo->estadoAutobus = validaEntero("Tomo el autobus?(1=Si/ 2=No): ");
+	
+	if(nuevo->estadoAutobus==1){
+	
+		nuevo->idRuta = validaEntero("Que ruta de autobus tomaras?: ");
+	
+		nuevo->origen = validaEntero("Desde donde tomas el autobus?: ");
+		nuevo->bajar=ValidaEntero("Bajas del autobus? (1=Si/ 2=NO): ");
+		if(nuevo->bajar==1){
+			
+			nuevo->destino = validaEntero("Donde bajas del autobus?: ");
 
+		}else{
+		
+		
 	nuevo->dia = validaEntero("Ingresa el dia del viaje: ");
 	nuevo->hora = validaEntero("Ingresa la hora del viaje: ");
+		}
+	}
 	
-	nuevo->estadoAutobus = validaEntero("Tomo el autobus?: ");
+	printf("Registro completado :)")
 	
 	nuevo->sigP = NULL;
 	
